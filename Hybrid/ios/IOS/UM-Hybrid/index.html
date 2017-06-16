@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>UmengDemo</title>
+        <script type="text/javascript" src="Umeng.js"></script>
+        <script type="text/javascript">
+            function deviceId(obj)
+            {
+                document.getElementById("DeviceId").innerHTML=obj;
+            }
+            function eventWithParameters()
+            {
+                var eventData = new Object();
+                eventData.name = "aaa";
+                eventData.age = 17;
+                MobclickAgent.onEventWithParameters('EventParameters', eventData);
+            }
+        function eventWithCounter() {
+            var eventCounter = new Object();
+            eventCounter.name = "key";
+            eventCounter.age = 17;
+            MobclickAgent.onEventWithCounter('EventCounter', eventCounter, '12');
+        }
+        function onCCEvent()
+        {
+            var eventArray = new Array();
+            eventArray[0]="arr1";
+            eventArray[1]="arr2";
+            eventArray[2]="arr3"
+            MobclickAgent.onCCEvent(eventArray,1,"eventlabel");
+
+        }
+        </script>
+    </head>
+    <body>
+        <br />
+        <br />
+        <input type="button" value="getDeviceId"
+        onclick="MobclickAgent.getDeviceId(deviceId)" />
+        <br />
+        <input type="button" value="onEvent"
+        onclick="MobclickAgent.onEvent('Event0')" />
+        <br />
+        <input type="button" value="onEventWithLabel"
+        onclick="MobclickAgent.onEventWithLabel('EventLabel', 'Label')" />
+        <br />
+        <input type="button" value="onEventWithCounter"
+        onclick="eventWithCounter()" />
+        <br />
+        <input type="button" value="onEventWithParameters"
+        onclick="eventWithParameters()" />
+        <br />
+        <input type="button" value="onPageBegin"
+        onclick="MobclickAgent.onPageBegin('Home')" />
+        <br />
+        <input type="button" value="onPageEnd"
+        onclick="MobclickAgent.onPageEnd('Home')" />
+        <br />
+        <br /> UMDplus:
+        <br />
+        <input type="button" value="track"
+        onclick="DplusAgent.track('eventA')" />
+        <br />
+        <input type="button" value="trackWithProperty" onclick="MobclickDplusAgent.trackWithProperty('eventB',{'name':'Tom','age':'21'})" />
+        <br />
+        <input type="button" value="registerSuperProperty"
+        onclick="DplusAgent.registerSuperProperty({'name':'Jerry','age':'23'})" />
+        <br />
+        <input type="button" value="unregisterSuperProperty"
+        onclick="DplusAgent.unregisterSuperProperty('name')" />
+        <br />
+        <input type="button" value="getSuperProperty"
+        onclick="DplusAgent.getSuperProperty('age')" />
+        <br />
+        <input type="button" value="getSuperProperties"
+        onclick="DplusAgent.getSuperProperties()" />
+        <br />
+        <input type="button" value="clearSuperProperties"
+        onclick="DplusAgent.clearSuperProperties()" />
+        <br />
+        <input type="button" value="setFirstLaunchEvent"
+        onclick="DplusAgent.setFirstLaunchEvent(['arrayA','arrayB','arrayC'])" />
+        <br />
+        <br /> UMGame:
+        <br />
+        <input type="button" value="profileSignInWithPUID"
+        onclick="GameAgent.profileSignInWithPUID('example_id')" />
+        <br />
+        <input type="button" value="profileSignInWithPUIDWithProvider"
+        onclick="GameAgent.profileSignInWithPUIDWithProvider('UM','example_id')" />
+        <br />
+        <input type="button" value="profileSignOff"
+        onclick="GameAgent.profileSignOff()" />
+        <br />
+        <input type="button" value="setUserLevelId"
+        onclick="GameAgent.setUserLevelId(12)" />
+        <br />
+        <input type="button" value="startLevel"
+        onclick="GameAgent.startLevel('Level-13')" />
+        <br />
+        <input type="button" value="finishLevel"
+        onclick="GameAgent.finishLevel('Level-13')" />
+        <br />
+        <input type="button" value="failLevel"
+        onclick="GameAgent.failLevel('Level-13')" />
+        <br />
+        
+        <input type="button" value="exchange"
+        onclick="GameAgent.exchange(100,'RMB',10000,2,'0EDKJH123HJ53')" />
+        <br />
+        <input type="button" value="pay"
+        onclick="GameAgent.pay(21,99,10)" />
+        <br />
+        <input type="button" value="payWithItem"
+        onclick="GameAgent.payWithItem(222,'payWithItem',200,203.30,77)" />
+        <br />
+        <input type="button" value="buy"
+        onclick="GameAgent.buy('buyApple',4,302)" />
+        <br />
+        <input type="button" value="use"
+        onclick="GameAgent.use('useApple',5,303)" />
+        <br />
+        <input type="button" value="bonus"
+        onclick="GameAgent.bonus(200,6)" />
+        <br />
+        <input type="button" value="bonusWithItem"
+        onclick="GameAgent.bonusWithItem('bonusItem',7,201,10)" />
+        <br />
+        
+        <p id="DeviceId" />
+        <br />
+
+
+
+    </body>
+</html>

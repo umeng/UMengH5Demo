@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/sanbo/Desktop/HybridDemo/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
+        "source": "/Users/sanbo/Desktop/HybridDemo/app/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/sanbo/Desktop/HybridDemo/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher_round.png",
+        "source": "/Users/sanbo/Desktop/HybridDemo/app/res/mipmap-hdpi/ic_launcher_round.png"
+    }
+]
